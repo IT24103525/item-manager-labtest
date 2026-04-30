@@ -42,6 +42,8 @@ function HomePage() {
 
       {loading ? (
         <p>Loading items...</p>
+      ) : !Array.isArray(items) ? (
+        <p>Failed to load items from backend. Please check the API URL and backend logs.</p>
       ) : items.length === 0 ? (
         <p>No items available. Add a new item from the menu.</p>
       ) : (
